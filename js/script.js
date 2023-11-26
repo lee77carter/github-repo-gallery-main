@@ -62,7 +62,7 @@ repoList.addEventListener("click", function (e) {
 const getRepoInfo = async function (repoName) {
     const fetchInfo = await fetch(`https://api.github.com/repos/${username}/${repoName}`);
     const repoInfo = await fetchInfo.json();
-    console.log(getRepoInfo);
+
     // get languages
     const fetchLanguages = await fetch(repoInfo.languages_url);
     const languageData = await fetchLanguages.json();
@@ -97,7 +97,6 @@ backButton.addEventListener("click", function () {
     selectReposData.classList.add("hide");
     backButton.classList.add("hide");
 });
-backButton();
 
 // search
 filterInput.addEventListener("input", function (e) {
